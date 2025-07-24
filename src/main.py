@@ -111,17 +111,14 @@ frame.pack()
 entry = tk.Entry(frame, width=60)
 entry.pack(side=tk.LEFT, padx=5)
 
-btn_browse = tk.Button(frame, text="Procurar", command=lambda: escolher_arquivo(entry, status_label=None))
-btn_browse.pack(side=tk.LEFT)
-
 status_label = tk.Label(root, text="", fg="black")
 status_label.pack(pady=10)
+
+btn_browse = tk.Button(frame, text="Procurar", command=lambda: escolher_arquivo(entry, status_label))
+btn_browse.pack(side=tk.LEFT)
 
 btn_enviar = tk.Button(root, text="Enviar Mensagens", bg="#28a745", fg="white",
                        command=lambda: iniciar_envio(entry, status_label))
 btn_enviar.pack(pady=5)
-
-status_label = tk.Label(root, text="", fg="black")
-status_label.pack()
 
 root.mainloop()
